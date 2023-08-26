@@ -33,19 +33,27 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     bool firstTime = true;
-    _onConnectivityChanged = Connectivity().onConnectivityChanged.listen((ConnectivityResult result) {
-      if(!firstTime) {
-        bool isNotConnected = result != ConnectivityResult.wifi && result != ConnectivityResult.mobile;
-        isNotConnected ? const SizedBox() : _globalKey.currentState?.hideCurrentSnackBar();
+    _onConnectivityChanged = Connectivity()
+        .onConnectivityChanged
+        .listen((ConnectivityResult result) {
+      if (!firstTime) {
+        bool isNotConnected = result != ConnectivityResult.wifi &&
+            result != ConnectivityResult.mobile;
+        isNotConnected
+            ? const SizedBox()
+            : _globalKey.currentState?.hideCurrentSnackBar();
         _globalKey.currentState?.showSnackBar(SnackBar(
           backgroundColor: isNotConnected ? Colors.red : Colors.green,
           duration: Duration(seconds: isNotConnected ? 6000 : 3),
           content: Text(
-            isNotConnected ? getTranslated('no_internet_connection', _globalKey.currentContext!)! : getTranslated('connected', _globalKey.currentContext!)!,
+            isNotConnected
+                ? getTranslated(
+                    'no_internet_connection', _globalKey.currentContext!)!
+                : getTranslated('connected', _globalKey.currentContext!)!,
             textAlign: TextAlign.center,
           ),
         ));
-        if(!isNotConnected) {
+        if (!isNotConnected) {
           _route();
         }
       }
@@ -55,8 +63,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Provider.of<SplashProvider>(context, listen: false).initSharedData();
     Provider.of<CartProvider>(context, listen: false).getCartData();
 
-   _route();
-
+    _route();
   }
 
   @override
@@ -67,7 +74,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _route() {
-    final SplashProvider splashProvider = Provider.of<SplashProvider>(context, listen: false);
+    final SplashProvider splashProvider =
+        Provider.of<SplashProvider>(context, listen: false);
     splashProvider.initConfig().then((bool isSuccess) {
       if (isSuccess) {
         Timer(const Duration(seconds: 1), () async {
@@ -75,31 +83,43 @@ class _SplashScreenState extends State<SplashScreen> {
           double? minimumVersion;
 
           //
-          if(defaultTargetPlatform == TargetPlatform.android  && config.playStoreConfig != null) {
+          if (defaultTargetPlatform == TargetPlatform.android &&
+              config.playStoreConfig != null) {
             minimumVersion = config.playStoreConfig!.minVersion;
-
-          }else if(defaultTargetPlatform == TargetPlatform.iOS  &&  config.appStoreConfig != null) {
+          } else if (defaultTargetPlatform == TargetPlatform.iOS &&
+              config.appStoreConfig != null) {
             minimumVersion = config.appStoreConfig!.minVersion;
           }
 
-          if(config.maintenanceMode!) {
-            Navigator.pushNamedAndRemoveUntil(Get.context!, Routes.getMaintainRoute(), (route) => false);
-
-          }else if(Version.parse('$minimumVersion') > Version.parse(AppConstants.appVersion)) {
-            Navigator.pushNamedAndRemoveUntil(Get.context!, Routes.getUpdateRoute(), (route) => false);
-          }else if (Provider.of<AuthProvider>(Get.context!, listen: false).isLoggedIn()) {
-            Provider.of<AuthProvider>(Get.context!, listen: false).updateToken();
-            Navigator.pushNamedAndRemoveUntil(Get.context!, Routes.getMainRoute(), (route) => false);
+          if (config.maintenanceMode!) {
+            Navigator.pushNamedAndRemoveUntil(
+                Get.context!, Routes.getMaintainRoute(), (route) => false);
+          } else if (Version.parse('$minimumVersion') >
+              Version.parse(AppConstants.appVersion)) {
+            Navigator.pushNamedAndRemoveUntil(
+                Get.context!, Routes.getUpdateRoute(), (route) => false);
+          } else if (Provider.of<AuthProvider>(Get.context!, listen: false)
+              .isLoggedIn()) {
+            Provider.of<AuthProvider>(Get.context!, listen: false)
+                .updateToken();
+            Navigator.pushNamedAndRemoveUntil(
+                Get.context!, Routes.getMainRoute(), (route) => false);
           } else {
-            Navigator.pushNamedAndRemoveUntil(Get.context!, ResponsiveHelper.isMobilePhone()
-                && Provider.of<OnBoardingProvider>(Get.context!, listen: false).showOnBoardingStatus
-                ? Routes.getLanguageRoute('splash')
-                :  Provider.of<BranchProvider>(Get.context!, listen: false).getBranchId() != -1 ? Routes.getMainRoute() : Routes.getBranchListScreen(), (route) => false);
+            Navigator.pushNamedAndRemoveUntil(
+                Get.context!,
+                ResponsiveHelper.isMobilePhone() &&
+                        Provider.of<OnBoardingProvider>(Get.context!,
+                                listen: false)
+                            .showOnBoardingStatus
+                    ? Routes.getLanguageRoute('splash')
+                    : Provider.of<BranchProvider>(Get.context!, listen: false)
+                                .getBranchId() !=
+                            -1
+                        ? Routes.getMainRoute()
+                        : Routes.getBranchListScreen(),
+                (route) => false);
           }
-
-        }
-
-        );
+        });
       }
     });
   }
@@ -114,16 +134,28 @@ class _SplashScreenState extends State<SplashScreen> {
           return Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              ResponsiveHelper.isWeb() ? FadeInImage.assetNetwork(
-                placeholder: Images.placeholderRectangle, height: 165,
-                image: splash.baseUrls != null ? '${splash.baseUrls!.restaurantImageUrl}/${splash.configModel!.restaurantLogo}' : '',
-                imageErrorBuilder: (c, o, s) => Image.asset(Images.placeholderRectangle, height: 165),
-              ) : Image.asset(Images.logo, height: 150),
+              ResponsiveHelper.isWeb()
+                  ? FadeInImage.assetNetwork(
+                      placeholder: Images.placeholderRectangle,
+                      height: 165,
+                      image: splash.baseUrls != null
+                          ? '${splash.baseUrls!.restaurantImageUrl}/${splash.configModel!.restaurantLogo}'
+                          : '',
+                      imageErrorBuilder: (c, o, s) =>
+                          Image.asset(Images.placeholderRectangle, height: 165),
+                    )
+                  : Image.asset(Images.logo, height: 150),
               const SizedBox(height: 30),
               Text(
-                ResponsiveHelper.isWeb() ? splash.configModel!.restaurantName! : AppConstants.appName,
-                style: rubikBold.copyWith(color: Theme.of(context).primaryColor, fontSize: 30),
+                ResponsiveHelper.isWeb()
+                    ? splash.configModel!.restaurantName!
+                    : AppConstants.appName,
+                style: rubikBold.copyWith(
+                    color: Theme.of(context).primaryColor, fontSize: 30),
               ),
+              const SizedBox(height: 30), // Adjust the height as needed
+              // Add your additional image here
+              Image.asset(Images.appStore, height: 150),
             ],
           );
         }),

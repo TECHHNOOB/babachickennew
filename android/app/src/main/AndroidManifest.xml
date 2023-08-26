@@ -26,7 +26,7 @@
 
     </queries>
 
-    <application android:label="eFood" android:requestLegacyExternalStorage="true" android:usesCleartextTraffic="true" android:icon="@mipmap/ic_launcher"> android:allowBackup="false" android:fullBackupOnly="false"
+    <application android:label="Baba Chicken 2.0" android:requestLegacyExternalStorage="true" android:usesCleartextTraffic="true" android:icon="@mipmap/ic_launcher"> android:allowBackup="false" android:fullBackupOnly="false"
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCZEtwth0PxdMKjFjbS-ezTtESdXaNlrAE"/>
 
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id" />
