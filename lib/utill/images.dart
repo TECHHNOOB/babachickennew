@@ -22,7 +22,7 @@ class Images {
   static const String placeholderRectangle =
       'assets/image/placeholder_rectangle.png';
   static const String placeholderUser = 'assets/image/placeholder_user.png';
-  static const String noFoodImage = 'assets/image/no_food1.gif';
+  static const String noFoodImage = 'assets/image/no_food1.png';
   static const String clock = 'assets/image/clock.png';
   static const String shoppingCart = 'assets/image/shopping_cart.png';
   static const String closed = 'assets/image/closed.png';
@@ -31,6 +31,7 @@ class Images {
       'assets/image/delivery_boy_marker.png';
   static const String destinationMarker = 'assets/image/destination_marker.png';
   static const String restaurantMarker = 'assets/image/restaurant_marker.png';
+  static const String logo2 = 'assets/image/logo_my.png';
   static const String unselectedRestaurantMarker =
       'assets/image/unselected_restaurant_marker.png';
   static const String wallet = 'assets/image/wallet.png';
@@ -100,7 +101,7 @@ class Images {
 
   // for Image
   static const String arabic = 'assets/image/arabic.png';
-  static const String china = 'assets/image/china.png';
+  static const String india = 'assets/image/india.png';
   static const String germany = 'assets/image/germany.png';
   static const String italy = 'assets/image/italy.png';
   static const String japan = 'assets/image/japan.png';

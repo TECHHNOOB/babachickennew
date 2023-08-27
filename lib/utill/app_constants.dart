@@ -106,9 +106,9 @@ class AppConstants {
         countryCode: 'US',
         languageCode: 'en'),
     LanguageModel(
-        imageUrl: Images.arabic,
-        languageName: 'Arabic',
-        countryCode: 'SA',
-        languageCode: 'ar'),
+        imageUrl: Images.india,
+        languageName: 'hindi',
+        countryCode: 'IN',
+        languageCode: 'hi'),
   ];
 }
