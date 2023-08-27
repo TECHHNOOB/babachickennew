@@ -286,7 +286,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   alignment: Alignment.center,
                                   decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
-                                      color: Colors.red),
+                                      color: Color.fromARGB(255, 217, 27, 13)),
                                   child: Center(
                                     child: Text(
                                       Provider.of<CartProvider>(context)

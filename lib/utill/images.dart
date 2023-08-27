@@ -22,7 +22,7 @@ class Images {
   static const String placeholderRectangle =
       'assets/image/placeholder_rectangle.png';
   static const String placeholderUser = 'assets/image/placeholder_user.png';
-  static const String noFoodImage = 'assets/image/no_food1.png';
+  static const String noFoodImage = 'assets/image/no_food.png';
   static const String clock = 'assets/image/clock.png';
   static const String shoppingCart = 'assets/image/shopping_cart.png';
   static const String closed = 'assets/image/closed.png';

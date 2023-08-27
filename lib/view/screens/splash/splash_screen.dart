@@ -146,16 +146,16 @@ class _SplashScreenState extends State<SplashScreen> {
                     )
                   : Image.asset(Images.logo, height: 150),
               const SizedBox(height: 30),
-              // Text(
-              //   ResponsiveHelper.isWeb()
-              //       ? splash.configModel!.restaurantName!
-              //       : AppConstants.appName,
-              //   style: rubikBold.copyWith(
-              //       color: Theme.of(context).primaryColor, fontSize: 30),
-              // ),
-              const SizedBox(height: 30), // Adjust the height as needed
-              // Add your additional image here
-              Image.asset(Images.logo2, height: 50),
+              Text(
+                ResponsiveHelper.isWeb()
+                    ? splash.configModel!.restaurantName!
+                    : AppConstants.appName,
+                style: rubikBold.copyWith(
+                    color: Theme.of(context).primaryColor, fontSize: 30),
+              ),
+              // const SizedBox(height: 30), // Adjust the height as needed
+              // // Add your additional image here
+              // Image.asset(Images.appStore, height: 150),
             ],
           );
         }),
