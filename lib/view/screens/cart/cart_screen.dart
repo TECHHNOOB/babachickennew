@@ -483,12 +483,12 @@ class _CartScreenState extends State<CartScreen> {
                                               ),
                                               const SizedBox(height: 10),
 
-                                              ItemView(
-                                                title: getTranslated(
-                                                    'tax', context)!,
-                                                subTitle:
-                                                    '(+) ${PriceConverter.convertPrice(tax)}',
-                                              ),
+                                              // ItemView(
+                                              //   title: getTranslated(
+                                              //       'tax', context)!,
+                                              //   subTitle:
+                                              //       '(+) ${PriceConverter.convertPrice(tax)}',
+                                              // ),
                                               const SizedBox(height: 10),
 
                                               ItemView(

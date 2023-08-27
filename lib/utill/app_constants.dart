@@ -107,7 +107,7 @@ class AppConstants {
         languageCode: 'en'),
     LanguageModel(
         imageUrl: Images.india,
-        languageName: 'hindi',
+        languageName: 'Hindi',
         countryCode: 'IN',
         languageCode: 'hi'),
   ];
