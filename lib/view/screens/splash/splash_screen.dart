@@ -144,15 +144,16 @@ class _SplashScreenState extends State<SplashScreen> {
                       imageErrorBuilder: (c, o, s) =>
                           Image.asset(Images.placeholderRectangle, height: 165),
                     )
-                  : Image.asset(Images.logo, height: 150),
+                  : Image.asset(Images.logo2, height: 150),
+
               const SizedBox(height: 30),
-              Text(
-                ResponsiveHelper.isWeb()
-                    ? splash.configModel!.restaurantName!
-                    : AppConstants.appName,
-                style: rubikBold.copyWith(
-                    color: Theme.of(context).primaryColor, fontSize: 30),
-              ),
+              // Text(
+              //   ResponsiveHelper.isWeb()
+              //       ? splash.configModel!.restaurantName!
+              //       : AppConstants.appName,
+              //   style: rubikBold.copyWith(
+              //       color: Theme.of(context).primaryColor, fontSize: 30),
+              // ),
               // const SizedBox(height: 30), // Adjust the height as needed
               // // Add your additional image here
               // Image.asset(Images.appStore, height: 150),

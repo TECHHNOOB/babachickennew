@@ -640,6 +640,33 @@ class _CartBottomSheetState extends State<CartBottomSheet> {
 
   Widget _cartButton(bool isAvailable, BuildContext context,
       CartModel cartModel, List<Variation>? variationList) {
+    // Check if the product is not available
+    if (!isAvailable) {
+      // Product is not available, return an empty container
+      return Container(
+        alignment: Alignment.center,
+        padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
+        margin: const EdgeInsets.only(bottom: Dimensions.paddingSizeSmall),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Theme.of(context).primaryColor.withOpacity(0.1),
+        ),
+        child: Column(children: [
+          Text(getTranslated('not_available_now', context)!,
+              style: rubikMedium.copyWith(
+                color: Theme.of(context).primaryColor,
+                fontSize: Dimensions.fontSizeLarge,
+              )),
+          // Text(
+          //   '${getTranslated('available_will_be', context)} ${DateConverter.convertTimeToTime(widget.product!.availableTimeStarts!, context)} '
+          //   '- ${DateConverter.convertTimeToTime(widget.product!.availableTimeEnds!, context)}',
+          //   style: rubikRegular,
+          // ),
+        ]),
+      );
+    }
+
+    // Product is available, continue with the button rendering
     return Column(children: [
       isAvailable
           ? const SizedBox()
