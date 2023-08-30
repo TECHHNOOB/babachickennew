@@ -144,9 +144,16 @@ class _SplashScreenState extends State<SplashScreen> {
                       imageErrorBuilder: (c, o, s) =>
                           Image.asset(Images.placeholderRectangle, height: 165),
                     )
-                  : Image.asset(Images.logo2, height: 150),
+                  : Image.asset(Images.logo2, height: 80),
 
               const SizedBox(height: 30),
+              Text(
+                "Made with love in India",
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontSize: 18, // Adjust the font size as needed
+                ),
+              ),
               // Text(
               //   ResponsiveHelper.isWeb()
               //       ? splash.configModel!.restaurantName!
