@@ -147,6 +147,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   : Image.asset(Images.logo2, height: 80),
 
               const SizedBox(height: 30),
+
               Text(
                 "Made with love in India",
                 style: TextStyle(
