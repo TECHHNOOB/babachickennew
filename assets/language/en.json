@@ -258,7 +258,7 @@
   "today": "Today",
   "tomorrow": "Tomorrow",
   "now": "Now",
-  "no_slot_available": "No slot available",
+  "no_slot_available": "No slot available Click on Tomorrow",
   "select_a_time": "Select a time",
   "one_or_more_products_are_not_available_for_this_selected_time": "One or more products are not available for this selected time",
   "points": "Points",
