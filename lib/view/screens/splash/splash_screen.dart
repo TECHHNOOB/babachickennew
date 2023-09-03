@@ -139,14 +139,14 @@ class _SplashScreenState extends State<SplashScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Image.asset(Images.logo2, height: 50),
+                Image.asset(Images.logo2, height: 78),
                 const SizedBox(height: 40),
-                Text(AppConstants.appName,
-                    textAlign: TextAlign.center,
-                    style: rubikBold.copyWith(
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 30,
-                    )),
+                // Text(AppConstants.appName,
+                //     textAlign: TextAlign.center,
+                //     style: rubikBold.copyWith(
+                //       color: Theme.of(context).primaryColor,
+                //       fontSize: 30,
+                //     )),
               ],
             ),
           ),
