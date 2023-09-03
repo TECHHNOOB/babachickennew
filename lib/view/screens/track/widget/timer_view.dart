@@ -48,50 +48,50 @@ class _TimerViewState extends State<TimerView> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         if (days > 0)
-                          TimerBox(
-                              time: days,
-                              text: getTranslated('day', context),
-                              isBorder: true),
+                          // TimerBox(
+                          //     time: days,
+                          //     text: getTranslated('day', context),
+                          //     isBorder: true),
                         if (days > 0) const SizedBox(width: 5),
                         if (days > 0)
-                          Text(':',
-                              style: TextStyle(
-                                  color: Theme.of(context).primaryColor)),
+                          // Text(':',
+                          //     style: TextStyle(
+                          //         color: Theme.of(context).primaryColor)),
                         if (days > 0) const SizedBox(width: 5),
-                        TimerBox(
-                            time: hours,
-                            text: getTranslated('hour', context),
-                            isBorder: true),
+                        // TimerBox(
+                        //     time: hours,
+                        //     text: getTranslated('hour', context),
+                        //     isBorder: true),
                         const SizedBox(width: 5),
-                        Text(':',
-                            style: TextStyle(
-                                color: Theme.of(context).primaryColor)),
+                        // Text(':',
+                        //     style: TextStyle(
+                        //         color: Theme.of(context).primaryColor)),
                         const SizedBox(width: 5),
-                        TimerBox(
-                            time: minutes,
-                            text: getTranslated('min', context),
-                            isBorder: true),
+                        // TimerBox(
+                        //     time: minutes,
+                        //     text: getTranslated('min', context),
+                        //     isBorder: true),
                         const SizedBox(width: 5),
-                        Text(':',
-                            style: TextStyle(
-                                color: Theme.of(context).primaryColor)),
+                        // Text(':',
+                        //     style: TextStyle(
+                        //         color: Theme.of(context).primaryColor)),
                         const SizedBox(width: 5),
-                        TimerBox(
-                          time: seconds,
-                          text: getTranslated('sec', context),
-                          isBorder: true,
-                        ),
+                        // TimerBox(
+                        //   time: seconds,
+                        //   text: getTranslated('sec', context),
+                        //   isBorder: true,
+                        // ),
                         const SizedBox(width: 5),
                       ]),
                 )
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      '${minutes < 5 ? 0 : minutes - 5} - ${minutes < 5 ? 5 : minutes}',
-                      style: rubikMedium.copyWith(
-                          fontSize: Dimensions.fontSizeOverLarge),
-                    ),
+                    // Text(
+                    //   '${minutes < 5 ? 0 : minutes - 5} - ${minutes < 5 ? 5 : minutes}',
+                    //   style: rubikMedium.copyWith(
+                    //       fontSize: Dimensions.fontSizeOverLarge),
+                    // ),
                     const SizedBox(width: Dimensions.paddingSizeExtraSmall),
                     Text(getTranslated('min', context)!,
                         style: rubikRegular.copyWith(
