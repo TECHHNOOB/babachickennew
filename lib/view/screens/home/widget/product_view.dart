@@ -40,7 +40,9 @@ class ProductView extends StatelessWidget {
             productProvider.showBottomLoader();
             if (productType == ProductType.latestProduct) {
               productProvider.getLatestProductList(
-                  false, productProvider.latestOffset.toString());
+                  false, productProvider.latestOffset.toString()
+                   );
+
             }
           }
         }
@@ -61,7 +63,7 @@ class ProductView extends StatelessWidget {
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     physics: const BouncingScrollPhysics(),
-                    itemCount: 10,
+                    itemCount: 2,
                     itemBuilder: (context, index) {
                       return Container(
                         padding: const EdgeInsets.symmetric(
@@ -107,7 +109,7 @@ class ProductView extends StatelessWidget {
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   physics: const BouncingScrollPhysics(),
-                  itemCount: productList.length,
+                  itemCount: 10,
                   itemBuilder: (context, index) {
                     return Container(
                       padding: const EdgeInsets.symmetric(
@@ -131,7 +133,7 @@ class ProductView extends StatelessWidget {
                           crossAxisCount:
                               ResponsiveHelper.isTab(context) ? 2 : 1,
                         ),
-                  itemCount: productList.length,
+                  itemCount: 2,
                   padding: const EdgeInsets.symmetric(
                       horizontal: Dimensions.paddingSizeExtraSmall),
                   physics: const NeverScrollableScrollPhysics(),

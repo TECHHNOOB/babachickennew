@@ -128,33 +128,47 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _globalKey,
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Consumer<SplashProvider>(builder: (context, splash, child) {
-          return Column(
-            mainAxisSize: MainAxisSize.min,
+      // backgroundColor: Colors.white,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment
+            .spaceBetween, 
             children: [
-              ResponsiveHelper.isWeb()
-                  ? FadeInImage.assetNetwork(
-                      placeholder: Images.placeholderRectangle,
-                      height: 165,
-                      image: splash.baseUrls != null
-                          ? '${splash.baseUrls!.restaurantImageUrl}/${splash.configModel!.restaurantLogo}'
-                          : '',
-                      imageErrorBuilder: (c, o, s) =>
-                          Image.asset(Images.placeholderRectangle, height: 165),
-                    )
-                  : Image.asset(Images.logo2, height: 80),
+              
+             Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Image.asset(Images.logo2, height: 50),
+                const SizedBox(height: 40),
+                Text(AppConstants.appName,
+                    textAlign: TextAlign.center,
+                    style: rubikBold.copyWith(
+                      color: Theme.of(context).primaryColor,
+                      fontSize: 30,
+                    )),
+              ],
+            ),
+          ),
 
               const SizedBox(height: 30),
-
-              Text(
-                "Made with love in India",
-                style: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontSize: 18, // Adjust the font size as needed
+              Container(
+            // color: Colors.grey[300],
+            padding: const EdgeInsets.all(16),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Made with ❤️ in India',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black87,
+                  ),
                 ),
-              ),
+              ],
+            ),
+          ),
+
               // Text(
               //   ResponsiveHelper.isWeb()
               //       ? splash.configModel!.restaurantName!
@@ -165,9 +179,7 @@ class _SplashScreenState extends State<SplashScreen> {
               // const SizedBox(height: 30), // Adjust the height as needed
               // // Add your additional image here
               // Image.asset(Images.appStore, height: 150),
-            ],
-          );
-        }),
+           ],
       ),
     );
   }
