@@ -60,7 +60,7 @@ Future<void> main() async {
   setPathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
 
-  if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
+  if (defaultTargetPlatform == TargetPlatform.android) {
     await Permission.notification.isDenied.then((value) {
       if (value) {
         Permission.notification.request();

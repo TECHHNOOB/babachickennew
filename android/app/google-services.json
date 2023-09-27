@@ -1,20 +1,20 @@
 {
   "project_info": {
-    "project_number": "222946577238",
-    "project_id": "test-bc5-2",
-    "storage_bucket": "test-bc5-2.appspot.com"
+    "project_number": "925870796052",
+    "project_id": "babachicken-login",
+    "storage_bucket": "babachicken-login.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:222946577238:android:da33f214468edbff47e4f7",
+        "mobilesdk_app_id": "1:925870796052:android:daca0a5ad7113581a12601",
         "android_client_info": {
           "package_name": "com.baba.chicken"
         }
       },
       "oauth_client": [
         {
-          "client_id": "222946577238-rgk3g3df0o9mtov29tb31e39ma14u8rd.apps.googleusercontent.com",
+          "client_id": "925870796052-ev8su396af39mi0o6elge3lj5plfovj7.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.baba.chicken",
@@ -22,20 +22,20 @@
           }
         },
         {
-          "client_id": "222946577238-vm6i2optbm3v35imnq6ub0jb24csuu2b.apps.googleusercontent.com",
+          "client_id": "925870796052-lkj70fmeqd6eu4iq5qfc548l6dvusqlr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCE05-YwVEFccdgOr6HM0vWyexxtDzW_lY"
+          "current_key": "AIzaSyCR0-Rcab623Zr6JkA2c2qFWIcoOMaGFnI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "222946577238-30m26l5hekkkla2q21q11bqvmucovu7n.apps.googleusercontent.com",
+              "client_id": "925870796052-lkj70fmeqd6eu4iq5qfc548l6dvusqlr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
