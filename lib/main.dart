@@ -60,27 +60,25 @@ Future<void> main() async {
   setPathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
 
-  if (defaultTargetPlatform == TargetPlatform.android) {
+  if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
     await Permission.notification.isDenied.then((value) {
       if (value) {
         Permission.notification.request();
       }
     });
   }
-
   if (!kIsWeb) {
     await Firebase.initializeApp();
   } else {
     await Firebase.initializeApp(
         options: const FirebaseOptions(
-     apiKey: "AIzaSyAUsW_kKPaZKA0BveL8LLyTcfp1SzJun5c",
-  authDomain: "babachicken-login.firebaseapp.com",
-  projectId: "babachicken-login",
-  storageBucket: "babachicken-login.appspot.com",
-  messagingSenderId: "925870796052",
-  appId: "1:925870796052:web:93e2ee0d878e5eb3a12601",
-  measurementId: "G-RMY2JEYQED"
-    ));
+            apiKey: "AIzaSyAUsW_kKPaZKA0BveL8LLyTcfp1SzJun5c",
+            authDomain: "babachicken-login.firebaseapp.com",
+            projectId: "babachicken-login",
+            storageBucket: "babachicken-login.appspot.com",
+            messagingSenderId: "925870796052",
+            appId: "1:925870796052:web:93e2ee0d878e5eb3a12601",
+            measurementId: "G-RMY2JEYQED"));
 
     await FacebookAuth.instance.webAndDesktopInitialize(
       appId: "YOUR_APP_ID",
