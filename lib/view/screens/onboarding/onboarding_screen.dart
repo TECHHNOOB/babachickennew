@@ -54,7 +54,7 @@ class OnBoardingScreen extends StatelessWidget {
                                   )
                                 : const SizedBox(),
                             SizedBox(
-                              height: 490,
+                              height: 400,
                               child: PageView.builder(
                                 itemCount: onBoardingList.onBoardingList.length,
                                 controller: _pageController,
