@@ -387,8 +387,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                               itemCount: order.timeSlots!.length,
                                               itemBuilder: (context, index) {
                                                 return SlotWidget(
-                                                  title: '${DateConverter.dateToTimeOnly(order.timeSlots![index].startTime!, context)} '
-    '- ${DateConverter.dateToTimeOnly(order.timeSlots![index].endTime!, context)}',
+                                                  title: (
+                                                      index == 0 && order.selectDateSlot == 0  && Provider.of<SplashProvider>(context, listen: false).isRestaurantOpenNow(context))
+                                                      ? getTranslated('now', context)
+                                                      : '${DateConverter.dateToTimeOnly(order.timeSlots![index].startTime!, context)} '
+                                                      '- ${DateConverter.dateToTimeOnly(order.timeSlots![index].endTime!, context)}',
                                                   isSelected: order.selectTimeSlot == index,
                                                   onTap: () => order.updateTimeSlot(index),
                                                 );

@@ -381,7 +381,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                           await Navigator
                                               .pushNamedAndRemoveUntil(
                                                   context,
-                                                  Routes.getMainRoute(),
+                                                  Routes.getBranchListScreen(),
                                                   (route) => false);
                                         }
                                       });

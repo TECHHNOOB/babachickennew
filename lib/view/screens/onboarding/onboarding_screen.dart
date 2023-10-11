@@ -61,7 +61,7 @@ class OnBoardingScreen extends StatelessWidget {
                                 physics: const BouncingScrollPhysics(),
                                 itemBuilder: (context, index) {
                                   return Padding(
-                                    padding: const EdgeInsets.all(0),
+                                    padding: const EdgeInsets.all(20),
                                     child: Image.asset(onBoardingList
                                         .onBoardingList[index].imageUrl),
                                   );
