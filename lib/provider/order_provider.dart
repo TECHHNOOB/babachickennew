@@ -376,7 +376,7 @@ class OrderProvider extends ChangeNotifier {
     }
     for (var slot in slots) {
       if (day == slot.day &&
-          (dateIndex == 0 ? slot.endTime!.isAfter(DateTime.now()) : true)) {
+          (dateIndex == 0 ? slot.startTime!.isAfter(DateTime.now()) : true)) {
         _timeSlots!.add(slot);
       }
     }
