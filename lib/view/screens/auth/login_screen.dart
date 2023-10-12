@@ -402,7 +402,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             }
                                             Navigator.pushNamedAndRemoveUntil(
                                                 context,
-                                                Routes.getBranchListScreen(),
+                                                Routes.getMainRoute(),
                                                 (route) => false);
                                           }
                                         });
